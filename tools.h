@@ -36,10 +36,10 @@ void setState(int s) {
 
   digitalWrite(SONOFF_RELAY, relayState);
   if (relayState == relStateOFF) {
-//    digitalWrite(SONOFF_LED, LEDStateOFF);
+    digitalWrite(SONOFF_LED, LEDStateOFF);
   }
   else {
-//    digitalWrite(SONOFF_LED, LEDStateON);
+    digitalWrite(SONOFF_LED, LEDStateON);
   }
 
 }

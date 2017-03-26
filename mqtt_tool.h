@@ -20,17 +20,17 @@ void callback_mqtt(char* topic, byte* payload, unsigned int length) {
   DebugPrintln();
 
   // Switch on the LED if an 1 was received as first character
-//  switch ((char)payload[0]) {
-//    case '0':
-//      turnOff();
-//      break;
-//    case '1':
-//      turnOn();
-//      break;
-//    case '2':
-//      //toggle();
-//      break;
-//  }
+  switch ((char)payload[0]) {
+    case '0':
+      turnOff();
+      break;
+    case '1':
+      turnOn();
+      break;
+    case '2':
+      toggle();
+      break;
+  }
 }
 
 void reconnect_mqtt() {
@@ -66,7 +66,7 @@ void check_mqtt() {
   client.loop();
 }
 
-void pub_mqtt_toggle(){
+void pub_mqtt_toggle() {
   client.publish(mqtt_pubtopic, "2");
 }
 

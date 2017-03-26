@@ -72,7 +72,7 @@ void setup() {
   //entered config mode, make led toggle faster
   // ticker.attach(0.2, tick);
   ticker.detach( );
-  digitalWrite(SONOFF_LED, LEDStateON);
+  //digitalWrite(SONOFF_LED1, LEDStateON);
   turnOff();
 
   init_mqtt();
@@ -96,7 +96,7 @@ void loop() {
             DebugPrintln("too short press - no action");
           } else if (duration < 5000) {
             DebugPrintln("short press - toggle relay");
-            toggle();
+            //toggle();
             pub_mqtt_toggle();
           } else if (duration < 10000) {
             DebugPrintln("medium press - reset");
