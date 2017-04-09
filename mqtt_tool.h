@@ -1,8 +1,8 @@
 #include <PubSubClient.h>
 
 const char* mqtt_server = "mqtt.cytron.tiscali.at";
-const char* mqtt_subtopic = "ATSH28/OG/Z1/SW/+";
-const char* mqtt_pubtopic = "ATSH28/OG/Z1/SW/2";
+const char* mqtt_subtopic = "ATSH28/OG/Z1/SW/+/set";
+const char* mqtt_pubtopic = "ATSH28/OG/Z1/SW/2/set";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -41,7 +41,7 @@ void reconnect_mqtt() {
     if (client.connect("ESPMQTTSW")) {
       DebugPrintln("connected");
       // Once connected, publish an announcement...
-      client.publish(mqtt_pubtopic, "hello world");
+      //client.publish(mqtt_pubtopic, "hello world");
       // ... and resubscribe
       client.subscribe(mqtt_subtopic);
     } else {
